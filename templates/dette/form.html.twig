@@ -1,0 +1,28 @@
+
+<form method="post" class="max-w-lg mx-auto bg-white p-8 shadow-md rounded-lg">
+    {{ form_start(form) }}
+    
+    <div class="mb-4">
+        {{ form_label(form.montant, 'Montant', {'label_attr': {'class': 'block text-sm font-medium text-gray-700'}}) }}
+        {{ form_widget(form.montant, {'attr': {'class': 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}) }}
+    </div>
+    
+    <div class="mb-4">
+        {{ form_label(form.montantVerser, 'Montant Versé', {'label_attr': {'class': 'block text-sm font-medium text-gray-700'}}) }}
+        {{ form_widget(form.montantVerser, {'attr': {'class': 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}) }}
+    </div>
+    
+    <div class="mb-4">
+        {{ form_label(form.createAt, 'Créé le', {'label_attr': {'class': 'block text-sm font-medium text-gray-700'}}) }}
+        {{ form_widget(form.createAt, {'attr': {'class': 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}) }}
+    </div>
+    
+    <div class="mb-4">
+        {{ form_label(form.updateAt, 'Mis à jour le', {'label_attr': {'class': 'block text-sm font-medium text-gray-700'}}) }}
+        {{ form_widget(form.updateAt, {'attr': {'class': 'mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm'}}) }}
+    </div>
+
+    <button type="submit" class="mt-4 w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-700">Enregistrer</button>
+
+    {{ form_end(form) }}
+</form>

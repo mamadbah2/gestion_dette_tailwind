@@ -1,0 +1,38 @@
+
+<div class="max-w-4xl mx-auto">
+    <form method="post" class="mb-6">
+        {{ form_start(formSearch) }}
+        <div class="space-y-4">
+            {{ form_widget(formSearch.status, {'attr': {'class': 'form-checkbox'}}) }}
+        </div>
+        <button type="submit" class="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-lg">Filtrer</button>
+        {{ form_end(formSearch) }}
+    </form>
+
+    <table class="min-w-full bg-white">
+        <thead>
+            <tr>
+                <th class="py-2">ID</th>
+                <th class="py-2">Montant</th>
+                <th class="py-2">Montant Versé</th>
+                <th class="py-2">Créé le</th>
+                <th class="py-2">Mis à jour le</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dette in dettes %}
+                <tr>
+                    <td class="py-2">{{ dette.id }}</td>
+                    <td class="py-2">{{ dette.montant }}</td>
+                    <td class="py-2">{{ dette.montantVerser }}</td>
+                    <td class="py-2">{{ dette.createAt|date('Y-m-d') }}</td>
+                    <td class="py-2">{{ dette.updateAt|date('Y-m-d') }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5" class="text-center py-4">Aucune dette trouvée</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
